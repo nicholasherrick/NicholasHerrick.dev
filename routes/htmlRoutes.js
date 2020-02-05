@@ -6,15 +6,36 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  // Load example page and pass in an example by id
   app.get("/portfolio", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+    res.render("portfolio");
+  });
+
+  app.get("/about", function(req, res) {
+    res.render("about");
+  });
+
+  app.get("/web-development", function(req, res) {
+    res.render("web-development");
+  });
+
+  app.get("/web-development/front-end", function(req, res) {
+    res.render("web-development");
+  });
+
+  app.get("/web-development/back-end", function(req, res) {
+    res.render("web-development");
+  });
+
+  app.get("/web-development/ui-ux", function(req, res) {
+    res.render("web-development");
+  });
+
+  app.get("/other-skills", function(req, res) {
+    res.render("other-skills");
+  });
+
+  app.get("/contact", function(req, res) {
+    res.render("contact");
   });
 
   // Render 404 page for any unmatched routes
