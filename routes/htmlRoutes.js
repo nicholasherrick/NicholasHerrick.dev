@@ -1,4 +1,5 @@
 var db = require("../models");
+var isAuthenticated = require("../lib/isAuthenticated");
 
 module.exports = function(app) {
   // Load index page
@@ -6,8 +7,15 @@ module.exports = function(app) {
     res.render("index");
   });
 
+  app.get("/home", function(req, res) {
+    res.render("index");
+  });
+
   app.get("/portfolio", function(req, res) {
-    res.render("portfolio");
+    db.Project.findAll({}).then(function(result) {
+      console.log(result);
+      res.render("portfolio", { projects: result });
+    });
   });
 
   app.get("/about", function(req, res) {
@@ -36,6 +44,15 @@ module.exports = function(app) {
 
   app.get("/contact", function(req, res) {
     res.render("contact");
+  });
+
+  app.get("/admin-login", function(req, res) {
+    res.render("admin-login");
+  });
+
+  // Admin Page!
+  app.get("/admin", isAuthenticated, function(req, res) {
+    res.render("admin");
   });
 
   // Render 404 page for any unmatched routes

@@ -1,4 +1,15 @@
-{{> nav-portfolio-active}}
-
+{{> nav-block}}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="display-4">Portfolio Apps:</h2>
+        </div>
+    </div>
+</div>
+<div class="container d-flex align-content-between flex-wrap border-box">
+    {{#each projects}}
+    {{> projects-block}}
+    {{/each}}
+</div>
 {{> footer-block}}
 {{> scripts-block}}
