@@ -3,3 +3,4 @@ node_modules
 config/config.js
 migrations
 public/js/app.js
+routes/apiRoutes.js

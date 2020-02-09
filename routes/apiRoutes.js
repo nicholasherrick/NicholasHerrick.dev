@@ -1,6 +1,10 @@
 var db = require("../models");
 var passport = require("../config/passport");
 var isAuthenticated = require("../lib/isAuthenticated");
+// using Twilio SendGrid's v3 Node.js Library
+// https://github.com/sendgrid/sendgrid-nodejs
+var sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 module.exports = function(app) {
 
@@ -41,4 +45,13 @@ module.exports = function(app) {
       res.json("/admin");
     });
   });
+
+  app.post("/api/sendemail", function(req, res) {
+    var msg = req.body;
+    console.log(msg);
+    sgMail.send(msg).then(function(result) {
+      res.json("/contact")
+    })
+  });
+
 };

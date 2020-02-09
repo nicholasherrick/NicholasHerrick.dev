@@ -27,15 +27,15 @@ module.exports = function(app) {
   });
 
   app.get("/web-development/front-end", function(req, res) {
-    res.render("web-development");
+    res.render("front-end");
   });
 
   app.get("/web-development/back-end", function(req, res) {
-    res.render("web-development");
+    res.render("back-end");
   });
 
   app.get("/web-development/ui-ux", function(req, res) {
-    res.render("web-development");
+    res.render("ui-ux");
   });
 
   app.get("/other-skills", function(req, res) {

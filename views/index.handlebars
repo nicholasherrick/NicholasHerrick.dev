@@ -2,13 +2,14 @@
 <div id="home">
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center title-text">
+      <div class="col-12 text-center title-text" data-aos="fade-left">
         <h1 id="welcome">Welcome to NicholasHerrick.dev</h1>
         <h2 id="under-welcome">I'm a Full Stack Web Developer based in Denver, Colorado.</h2>
       </div>
     </div>
   </div>
-  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-aos="flip-up"
+    data-aos-duration="1500">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -57,6 +58,22 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+  </div>
+</div>
+
+<div class="container align-content-between flex-wrap border-box">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8" data-aos="flip-right" data-aos-easing="ease-out-cubic"
+      data-aos-duration="1500">
+      <h1>Who Am I?</h1>
+      <hr>
+      <p>Hi! I'm Nick, welcome to my website created by me. I'm a full stack web developer from Denver, Colorado. I started coding in 2019 after enrolling in a coding boot camp program through the University of Denver. You can see my code over on my <a href="https://github.com/nicholasherrick" target="_blank">GitHub</a> page. Head over to my portfolio tab to see some of my finished projects. For my resume and everything you need to reach me, head to my contact page. I will keep this site constantly updated with my latest projects, skills, resume, relevant links and everything an anything related to my life as a developer.</p>
+    </div>
+      <figure data-aos="zoom-in" data-aos-duration="1500">
+        <img id="nick-daisy" class="img-fluid rounded mx-auto d-block" src="/img/nickdaisy.jpg">
+        <figcaption>My girlfriend Daisy (left) and Me</figcaption>
+      </figure>
+    {{> contact-card-block}}
   </div>
 </div>
 

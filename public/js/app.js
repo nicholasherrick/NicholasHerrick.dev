@@ -1,5 +1,9 @@
 $(document).ready(function() {
+  AOS.init();
   $('.nav-item [href^="/home' + location.pathname.split("/")[1] + '"]').addClass(
+    "active"
+  );
+  $('.nav-item [href^="/home' + location.pathname.split("/home")[1] + '"]').addClass(
     "active"
   );
   $('.nav-item [href^="/portfolio' + location.pathname.split("/portfolio")[1] + '"]').addClass(
@@ -12,6 +16,15 @@ $(document).ready(function() {
     "active"
   );
   $('.nav-item [href^="/web-development' + location.pathname.split("/web-development")[1] + '"]').addClass(
+    "active"
+  );
+  $('.nav-item [href^="/web-development' + location.pathname.split("/web-development/front-end")[1] + '"]').addClass(
+    "active"
+  );
+  $('.nav-item [href^="/web-development' + location.pathname.split("/web-development/back-end")[1] + '"]').addClass(
+    "active"
+  );
+  $('.nav-item [href^="/web-development' + location.pathname.split("/web-development/ui-ux")[1] + '"]').addClass(
     "active"
   );
   $('.nav-item [href^="/other-skills' + location.pathname.split("/other-skills")[1] + '"]').addClass(
@@ -65,6 +78,22 @@ $(document.body).on("click", "#submit-project", function(event) {
     .catch(function(err) {
       console.log(err.responseJSON);
     });
+});
+
+$(document.body).on("click", "#send-email", function(event) {
+  event.preventDefault();
+  var msg = {
+    to: "nth.herrick@gmail.com",
+    from: "info@nicholasherrick.dev",
+    subject: $("#email-subject").val().trim(),
+    text: $("#email-text").val().trim(),
+    html: "<strong>Sent from nicholasherrick.dev</strong>"
+  };
+  $.post("/api/sendemail", msg).then(function(res) {
+    window.location.replace(res);
+  }).catch(function(err) {
+    console.log(err.responseJSON);
+  });
 });
 
 // Sends registration info from the login page

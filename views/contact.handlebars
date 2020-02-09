@@ -1,4 +1,32 @@
 {{> nav-block}}
-
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center title-text" data-aos="fade-left">
+            <h1 id="welcome">Welcome to NicholasHerrick.dev</h1>
+            <h2 id="under-welcome">I'm a Full Stack Web Developer based in Denver, Colorado.</h2>
+        </div>
+    </div>
+</div>
+<div class="container align-content-between flex-wrap border-box" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+    <div class="row">
+        <div id="contact-content" class="col-xs-12 col-sm-8">
+            <h1>Contact</h1>
+            <hr>
+            <h3>Send Inquiry</h3>
+            <form>
+                <div class="form-group">
+                    <label for="email-subject">From:</label>
+                    <input type="text" class="form-control" id="email-subject">
+                </div>
+                <div class="form-group">
+                    <label for="email-text">Message:</label>
+                    <textarea class="form-control" rows="3" id="email-text"></textarea>
+                </div>
+                <button id="send-email" type="submit">Send</button>
+            </form>
+        </div>
+        {{> contact-card-block}}
+    </div>
+</div>
 {{> footer-block}}
 {{> scripts-block}}
