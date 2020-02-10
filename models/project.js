@@ -9,10 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     deployedLink: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      allowNull: false
     },
     repositoryLink: {
       type: DataTypes.STRING,
@@ -23,17 +20,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     projectDescription: {
       type: DataTypes.TEXT,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     },
     imagePath: {
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     }
   });
   Project.associate = function(models) {
