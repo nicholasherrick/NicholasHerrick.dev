@@ -1,6 +1,6 @@
 # My Portfolio Page V2!
 
-![Screenshot](/public/img/screenshot.png)
+![Screenshot](/img/screenshot.jpg)
 
 ## About
 
