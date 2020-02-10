@@ -20,16 +20,21 @@ module.exports = function(app) {
   );
 
   app.post("/api/signup", function(req, res) {
-    db.User.create({
-      username: req.body.username,
-      password: req.body.password
-    })
-      .then(function() {
-        res.json("/admin-login");
+    if (req.body.username === process.env.ADMIN_USERNAME && req.body.password === process.env.ADMIN_PASSWORD) {
+      db.User.create({
+        username: req.body.username,
+        password: req.body.password
       })
-      .catch(function(err) {
-        console.log(err);
-      });
+        .then(function() {
+          res.json("/admin-login");
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
+    } else {
+      console.log("Unauthorized");
+      res.send("Unauthorized")
+    }
   });
 
   app.get("/logout", function(req, res) {
