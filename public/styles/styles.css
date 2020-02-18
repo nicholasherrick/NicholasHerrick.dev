@@ -19,6 +19,10 @@ button {
   border: black 2px solid !important;
 }
 
+/* a.deployed-link[href=]{
+  display:none;
+} */
+
 .navbar {
   z-index: 999;
 }

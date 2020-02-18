@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+
   AOS.init();
   $('.nav-item [href^="/home' + location.pathname.split("/")[1] + '"]').addClass(
     "active"
