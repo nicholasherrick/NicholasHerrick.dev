@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-
   AOS.init();
+  
   $('.nav-item [href^="/home' + location.pathname.split("/")[1] + '"]').addClass(
     "active"
   );
@@ -20,13 +20,16 @@ $(document).ready(function () {
   $('.nav-item [href^="/web-development' + location.pathname.split("/web-development")[1] + '"]').addClass(
     "active"
   );
-  $('.nav-item [href^="/web-development' + location.pathname.split("/web-development/front-end")[1] + '"]').addClass(
+  $('.dropdown-item [href^="/web-development-page' + location.pathname.split("/web-development-page")[1] + '"]').addClass(
     "active"
   );
-  $('.nav-item [href^="/web-development' + location.pathname.split("/web-development/back-end")[1] + '"]').addClass(
+  $('.dropdown-item [href^="/web-development/front-end' + location.pathname.split("/web-development/front-end")[1] + '"]').addClass(
     "active"
   );
-  $('.nav-item [href^="/web-development' + location.pathname.split("/web-development/ui-ux")[1] + '"]').addClass(
+  $('.dropdown-item [href^="/web-development/back-end' + location.pathname.split("/web-development/back-end")[1] + '"]').addClass(
+    "active"
+  );
+  $('.dropdown-item [href^="/web-development/ui-ux' + location.pathname.split("/web-development/ui-ux")[1] + '"]').addClass(
     "active"
   );
   $('.nav-item [href^="/other-skills' + location.pathname.split("/other-skills")[1] + '"]').addClass(

@@ -22,7 +22,7 @@ module.exports = function(app) {
     res.render("about");
   });
 
-  app.get("/web-development", function(req, res) {
+  app.get("/web-development-page", function(req, res) {
     res.render("web-development");
   });
 
