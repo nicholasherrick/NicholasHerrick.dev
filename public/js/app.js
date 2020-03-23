@@ -88,10 +88,10 @@ $(document).ready(function () {
     event.preventDefault();
     var msg = {
       to: "nth.herrick@gmail.com",
-      from: "info@nicholasherrick.dev",
+      from: "info@nicholasherrick.com",
       subject: $("#email-subject").val().trim(),
       text: $("#email-text").val().trim(),
-      html: "<strong>Sent from nicholasherrick.dev</strong>"
+      html: "<strong>Sent from nicholasherrick.com</strong>"
     };
     $.post("/api/sendemail", msg).then(function (res) {
       window.location.replace(res);
